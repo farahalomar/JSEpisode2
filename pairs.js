@@ -20,24 +20,21 @@
 function pairs(names) {
 if (!names) {
   names = [];
+  if (names.length === 0) return [];
 }
-pairs = [];
+let groups = [];
+let name1, name2;
 
-let name1 = "";
-let name2 = "";
 while (names.length > 1) {
   name1 = names.getRandom();
   name2 = names.getRandom();
-  pairs.push([name1, name2]);
+  groups.push([name1, name2]);
 }
-
-if (names.length) {
-  pairs.push(names[0]);
+if (names.length === 1 ) {
+  groups.push([names[0]]);
 }
-
-return pairs
+return groups 
 }
-
 module.exports = pairs;
 
 /**********************************************
